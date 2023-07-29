@@ -1,0 +1,40 @@
+.page-header {
+    background-color: #2f2f2f;
+    color: white;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+}
+.page-header > * {
+    padding-left: 20px;
+    float:left;
+    color: white;
+}
+.page-header > .title {
+    font-size: 25px;
+    font-weight: 500;
+}
+.page-header > .link {
+    margin-left: auto;
+    margin-right: 20px;
+}
+.main-logo > img {
+    height: 3vh;
+}
+.page-footer {
+    background-color: #2f2f2f;
+    color: white;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+}
+.page-footer .links {
+    display: flex;
+}
+.page-footer .links > * {
+    padding-left: 20px;
+    color: white;
+}
+.page-wrapper {
+    height: 94vh;
+}

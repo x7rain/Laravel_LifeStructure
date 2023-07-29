@@ -1,11 +1,30 @@
-.page-wrapper {
-    position: absolute;
-    width: 100%;
+/* General styles */
+body {
+    color: #2f2f2f;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
     height: 100%;
+    margin:0;
+    padding:0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+.page-wrapper {
+    position: relative;
+    width: 100%;
     background-image: url("/images/homepage/homepage-bg.png");
     background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
+    background-position: center;
 }
 
 button.login {
@@ -58,4 +77,179 @@ button.login:active {
 button.login:focus {
     outline: none;
     border: 2px solid #4285f4;
+}
+
+/* Modal styles */
+.close {
+    font-size: 16px;
+    font-weight: 100;
+    color: #D3D3D3;
+    float: right;
+    border: none;
+    margin-right: 5px;
+    background-color: #fff;
+    outline: none;
+}
+
+.form {
+    width: 400px;
+    background-color: #fff;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.form-inner {
+    padding: 30px;
+}
+
+.tabs {
+    width: 340px;
+    margin-top: 25px;
+}
+
+ul.tabs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: solid 1px #d8d8d8;
+}
+
+ul.tabs li {
+    display: inline-block;
+    width: 138px;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+ul.tabs li.current {
+    font-weight: 500;
+    box-shadow: inset 0 -3px 0 0 rgba(50, 117, 193, 1);
+    -webkit-box-shadow: inset 0 -3px 0 0 rgba(50, 117, 193, 1);
+    -moz-box-shadow: inset 0 -3px 0 0 rgba(50, 117, 193, 1);
+}
+
+.form-content {
+    display: none;
+}
+
+.form-content.current {
+    display: inherit;
+}
+
+.field {
+    width: 295px;
+    margin-top: 15px;
+    padding: 12px 15px 12px 30px;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 22px;
+    border: 1px solid #d8d8d8;
+}
+
+.check {
+    opacity: 0;
+    position: absolute;
+}
+
+.check .check-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.check-label {
+    position: relative;
+}
+
+.check + .check-label:before {
+    content: '';
+    background: #fff;
+    border: 1px solid #c3c3c3;
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+    padding: 2px;
+    font-size: 12px;
+    margin-right: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.check:checked + .check-label:before {
+    content: "\2713";
+    background: #fff;
+    color: #2f2f2f;
+}
+
+.secondary-text,
+.secondary-text a {
+    color: #939393;
+}
+
+.secondary-text a:hover {
+    color: #3275C1;
+}
+
+.forgot {
+    float: right;
+}
+
+.promo {
+    font-size: 10px;
+}
+
+.position {
+    height: 480px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.clear {
+    height: 15px;
+}
+
+input:first-of-type {
+    margin-top: 40px;
+}
+
+.signin {
+    background-color: rgb(255, 183, 0);
+    padding: 15px;
+    width: 100%;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.field::-webkit-input-placeholder {
+    color: #2f2f2f;
+}
+
+.field:-moz-placeholder {
+    color: #2f2f2f;
+    opacity: 1;
+}
+
+.field::-moz-placeholder {
+    color: #2f2f2f;
+    opacity: 1;
+}
+
+.field:-ms-input-placeholder {
+    color: #2f2f2f;
+}
+
+.field:placeholder-shown {
+    color: #2f2f2f;
+}
+
+input:focus,
+.check:focus {
+    outline: 2px solid #3275C1;
+    border-radius: 5px;
 }
