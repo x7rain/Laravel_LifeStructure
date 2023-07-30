@@ -80,6 +80,20 @@ button.login:focus {
 }
 
 /* Modal styles */
+#modal-container {
+    width: auto;
+    height: auto;
+    overflow: auto;
+}
+#modal-container.transform {
+    transform: revert;
+}
+#modal-container * {
+    box-sizing: revert;
+}
+#modal-container *:before {
+    box-sizing: revert;
+}
 .close {
     font-size: 16px;
     font-weight: 100;
