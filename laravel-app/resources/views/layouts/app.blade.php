@@ -3,21 +3,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', "Life Structure")</title>
-    <link rel="stylesheet" href="{{asset("/css/general.css")}}">
-    @yield('styles')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
-    <script src="{{asset('js/jquery.min.js')}}"></script>
+    @yield('styles')
     @yield('scripts')
 </head>
 <body class="antialiased">
-    @include('layouts.header')
-    <div class="page-wrapper">
-        @yield('content')
-    </div>
-    @include('layouts.footer')
-    @livewireScripts
+@include('layouts.header')
+@auth
+@include('layouts.navigation')
+@endauth
+<div class="page-wrapper">
+    @yield('content')
+</div>
+@include('layouts.footer')
+@livewireScripts
 </body>
-<script defer src="https://unpkg.com/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </html>
