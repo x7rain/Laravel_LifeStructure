@@ -1,5 +1,5 @@
 {{--todo - develop--}}
-<div>
+<div class="modal">
     <div class="form position">
         <a>
             <button class="close" onclick='Livewire.emit("closeModal","sign-in-sign-up")'>x</button>
@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-    <script>
+    <script type="text/javascript">
         $('ul.tabs li').click(function () {
             var tab_id = $(this).attr('data-tab');
             $('ul.tabs li').removeClass('current');
