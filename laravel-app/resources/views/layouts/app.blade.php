@@ -16,6 +16,13 @@
 @include('layouts.navigation')
 @endauth
 <div class="page-wrapper">
+    <div class="messages">
+        @foreach($errors->getMessages() as $message)
+            <div class="message">
+                {{implode(" ", $message)}}
+            </div>
+        @endforeach
+    </div>
     @yield('content')
 </div>
 @include('layouts.footer')
