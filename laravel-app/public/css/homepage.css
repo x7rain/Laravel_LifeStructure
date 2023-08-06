@@ -162,43 +162,6 @@ ul.tabs li.current {
     border: 1px solid #d8d8d8;
 }
 
-.check {
-    opacity: 0;
-    position: absolute;
-}
-
-.check .check-label {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 5px;
-    cursor: pointer;
-}
-
-.check-label {
-    position: relative;
-}
-
-.check + .check-label:before {
-    content: '';
-    background: #fff;
-    border: 1px solid #c3c3c3;
-    display: inline-block;
-    vertical-align: middle;
-    width: 10px;
-    height: 10px;
-    padding: 2px;
-    font-size: 12px;
-    margin-right: 10px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.check:checked + .check-label:before {
-    content: "\2713";
-    background: #fff;
-    color: #2f2f2f;
-}
-
 .secondary-text,
 .secondary-text a {
     color: #939393;
@@ -226,10 +189,6 @@ ul.tabs li.current {
 
 .clear {
     height: 15px;
-}
-
-input:first-of-type {
-    margin-top: 40px;
 }
 
 .signin {
@@ -262,8 +221,7 @@ input:first-of-type {
     color: #2f2f2f;
 }
 
-input:focus,
-.check:focus {
+input:focus {
     outline: 2px solid #3275C1;
     border-radius: 5px;
 }
