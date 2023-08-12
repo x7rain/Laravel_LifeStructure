@@ -1,16 +1,19 @@
-.body {
+html {
+    height: 100%;
+}
+body {
     font-family: "Google Sans",Roboto,Arial,sans-serif;
     font-size: 16px;
-}
-.content {
-    min-height: 94vh;
+    display: flex;
+    flex-flow: column;
 }
 .page-header {
     background-color: #2f2f2f;
     color: white;
-    height: 3vh;
+    height: 30px;
     display: flex;
     align-items: center;
+    flex: 0 1 auto;
 }
 .page-header > * {
     padding-left: 20px;
@@ -26,12 +29,13 @@
     margin-right: 20px;
 }
 .main-logo > img {
-    height: 3vh;
+    height: 30px;
 }
 .page-footer {
+    flex: 0 1 auto;
     background-color: #2f2f2f;
     color: white;
-    height: 3vh;
+    height: 30px;
     display: flex;
     align-items: center;
 }
@@ -43,9 +47,15 @@
     color: white;
 }
 .page-wrapper {
-    height: 94vh;
+    height: 100%;
+    flex: 1 1 auto;
 }
 .messages {
     background-color: red;
-    padding: 2px 5px 2px 5px;
+}
+.content {
+    height: 100%;
+}
+.page-content {
+    height: 100%;
 }
