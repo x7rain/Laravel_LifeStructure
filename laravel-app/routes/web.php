@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\LifeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,10 +18,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/','homepage')->name('homepage');
 
+Route::get('/life/{lifeId?}', [LifeController::class, 'index'])
+    ->middleware(['auth', 'verified'])->name('life');
 
-Route::get('/life', function () {
-    return view('life');
-})->middleware(['auth', 'verified'])->name('life');
+Route::post('/life', [LifeController::class, 'store'])
+    ->middleware(['auth', 'verified'])->name('new-life');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

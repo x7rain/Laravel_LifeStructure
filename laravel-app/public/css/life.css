@@ -1,0 +1,12 @@
+.life-wrapper {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+}
+
+#choose-life-dropdown #dropdownMenuButton1 {
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.6);
+}
