@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\ElementController;
 use App\Http\Controllers\LifeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +23,12 @@ Route::get('/life/{lifeId?}', [LifeController::class, 'index'])
 
 Route::post('/life', [LifeController::class, 'store'])
     ->middleware(['auth', 'verified'])->name('new-life');
+
+Route::post('/element', [ElementController::class, 'store'])
+    ->middleware(['auth', 'verified'])->name('new-element');
+
+Route::get('/aspect', [LifeController::class, 'index']) //todo change controller
+    ->middleware(['auth', 'verified'])->name('aspect');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
