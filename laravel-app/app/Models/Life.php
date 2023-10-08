@@ -24,10 +24,15 @@ class Life extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function elements()
+    {
+        return $this->hasMany(LifeElement::class);
+    }
+
     public static function getIdNamePairsByUser(int $userId): array
     {
         $user = User::find($userId);
-        $lives = $user->life;
+        $lives = $user->lives;
         $Ids = [];
         foreach ($lives as $life) {
             $Ids[$life->id] = $life->title;
@@ -39,7 +44,7 @@ class Life extends Model
     {
         $user = Auth::user();
 
-        return $user->life->contains($this);
+        return $user->lives->contains($this);
     }
 
     public function addNewBackgroundImage(UploadedFile $image): void

@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/','homepage')->name('homepage');
 
-Route::get('/life/{lifeId?}', [LifeController::class, 'index'])
+Route::get('/life/{lifeId?}/{folderId?}', [LifeController::class, 'index'])
     ->middleware(['auth', 'verified'])->name('life');
 
 Route::post('/life', [LifeController::class, 'store'])

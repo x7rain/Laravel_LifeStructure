@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ElementFolder;
 use App\Models\Life;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,7 +10,7 @@ use Illuminate\Validation\Rules\File;
 
 class LifeController extends Controller
 {
-    public function index($lifeId = null)
+    public function index($lifeId = null, $folderId = null)
     {
         $user = Auth::user();
         $lifeId = $lifeId ?? $user->current_life;
@@ -17,13 +18,17 @@ class LifeController extends Controller
 
 
         if (!$life || !$life->isValidForCurrentUser()) {
-            $lifeId = $user->current_life ?? $user->life->first()->id;
+            $lifeId = $user->current_life ?? $user->lives->first()->id;
             return redirect()->route('life', ['lifeId' => $lifeId]);
         }
         $lifeIds = Life::getIdNamePairsByUser($user->id);
         $user->current_life = $lifeId;
         $user->save();
-        session(['lifeId' => $lifeId]);
+        $life->folderId = $folderId;
+        $life->currentBackgroundImage = $folderId
+            ? ElementFolder::find($folderId)->background_image
+            : $life->background_image;
+        session(['lifeId' => $lifeId, 'folderId' => $folderId]);
 
         return view("life", ['life' => $life, 'lifeIds' => $lifeIds]);
     }

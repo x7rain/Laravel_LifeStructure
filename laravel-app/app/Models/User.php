@@ -50,7 +50,7 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->notify(new VerifyEmail);
     }
 
-    public function life(): HasMany
+    public function lives(): HasMany
     {
         return $this->hasMany(Life::class);
     }
