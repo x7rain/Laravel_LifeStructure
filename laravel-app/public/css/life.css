@@ -10,3 +10,15 @@
     font-weight: 500;
     background-color: rgba(255, 255, 255, 0.6);
 }
+.life-header > * {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+.new-element-icon {
+    width: 30px;
+    height: 30px;
+}
+.element-title {
+    background-color: rgba(255, 255, 255, 0.5);
+}
